@@ -1,27 +1,179 @@
 # ProductCatelog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
 
-## Development server
+## api docs
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://isentropic-road-316012.el.r.appspot.com
+  description: Generated server url
+paths:
+  /authenticate:
+    post:
+      tags:
+      - jwt-authentication-controller
+      operationId: generateAuthenticationToken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JwtRequest'
+      responses:
+        "200":
+          description: default response
+          content:
+            '*/*':
+              schema:
+                type: object
+  /api/v1/products:
+    get:
+      tags:
+      - product-catelog-controller
+      description: retrieve all products
+      operationId: getAllProducts
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductCatelog'
+  /api/v1/products/{id}:
+    get:
+      tags:
+      - product-catelog-controller
+      description: retrieve all products by id
+      operationId: getAllProductById
+      parameters:
+      - name: product id
+        in: path
+        description: unique product identifier
+        required: true
+        schema:
+          type: integer
+          format: int64
+        example: 10
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ProductCatelog'
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductCatelog'
+  /api/v1/products/category/{category}:
+    get:
+      tags:
+      - product-catelog-controller
+      description: retrieve all products by category
+      operationId: getAllProductsByCategory
+      parameters:
+      - name: category
+        in: path
+        description: product category identifier
+        required: true
+        schema:
+          type: string
+        example: Commercial
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductCatelog'
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductCatelog'
+  /api/v1/products/create:
+    post:
+      tags:
+      - product-catelog-controller
+      description: create product
+      operationId: createProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductCatelog'
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductCatelog'
+  /api/v1/products/update/{id}:
+    put:
+      tags:
+      - product-catelog-controller
+      description: update product
+      operationId: updateProductCatelog
+      parameters:
+      - name: product id
+        in: path
+        description: unique product identifier
+        required: true
+        schema:
+          type: integer
+          format: int64
+        example: 10
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductCatelog'
+      responses:
+        "404":
+          description: Not Found
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ProductCatelog'
+        "200":
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductCatelog'
+components:
+  schemas:
+    JwtRequest:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    ProductCatelog:
+      required:
+      - productCategory
+      - productName
+      type: object
+      properties:
+        productId:
+          type: integer
+          format: int64
+        productCategory:
+          type: string
+        productName:
+          type: string
+        productDescription:
+          type: string
+        units:
+          type: integer
+          format: int32
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
