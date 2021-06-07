@@ -1,0 +1,110 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a href="#" class="navbar-brand">
+      <img src="https://img.icons8.com/nolan/64/product.png" height="28" alt="Products">
+  </a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav">
+          <a class="nav-item btn btn-outline-light ml-5 text-white" (click)="goHome()">Home</a>
+          <a class="nav-item btn btn-outline-light ml-2 mr-2 text-white"  (click)="addingNewProduct = true">Create Product</a>
+          <form class="form-inline my-2 my-lg-0 ml-5 h-10">
+            <input class="form-control mr-sm-2" type="search" #searchcategory placeholder="Search By Category" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" (click)="retrieveAllProductsByCategory(searchcategory.value)">Search</button>
+          </form>
+      </div>
+      <div class="navbar-nav ml-auto">
+          <a class="nav-item btn btn-outline-light text-white" routerLink="/logout">Logout</a>
+      </div>
+  </div>
+</nav>
+<div style="max-width: 80%;
+margin: auto;">
+  <div style="margin-left: 10%;margin-right: 10%;margin-top: 5%;">
+    <h3 *ngIf="!addingNewProduct">PRODUCTS</h3>
+    <h3 *ngIf="addingNewProduct">CREATE PRODUCT</h3>
+  </div>
+
+  <div style="margin-left: 10%;margin-right: 10%;margin-top: 2%;">
+    <hr class="mt-1 mb-0" />
+    <div class="form-group" *ngIf="!addingNewProduct">
+      <label for="usr">Filter</label>
+      <input type="text" class="form-control" id="usr" [(ngModel)]="filter">
+    </div>
+    <table class="table table-hover" style="border: .5px solid gray;" *ngIf="!addingNewProduct">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Category</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Units</th>
+          <th scope="col">Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let product of products | tableFilter: filter:['productName','productCategory','productDescription']">
+          <td>{{product.productId}}</td>
+          <ng-container *ngIf="product.edit != true">
+            <td>{{product.productCategory}}</td>
+            <td>{{product.productName}}</td>
+            <td>{{product.productDescription}}</td>
+            <td>{{product.units}}</td>
+            <td><button type="button" class="btn btn-primary btn-sm" (click)="product.edit = true">edit</button></td>
+          </ng-container>
+          <ng-container *ngIf="product.edit">
+            <td><input class="form-control form-control-sm" [(ngModel)]="product.productCategory" type="text"
+                placeholder="Category"></td>
+            <td><input class="form-control form-control-sm" [(ngModel)]="product.productName" type="text"
+                placeholder="Name"></td>
+            <td><input class="form-control form-control-sm" [(ngModel)]="product.productDescription" type="text"
+                placeholder="Description"></td>
+            <td><input class="form-control form-control-sm" [(ngModel)]="product.units" type="number"
+                placeholder="Units"></td>
+            <td>
+              <!-- <button type="button" class="btn btn-info" (click)="updateProduct(product)">✓</button><button
+                type="button" class="btn btn-warning" [style.margin-left]="'5%'"
+                (click)="product.edit = false">X</button> -->
+                <div class="btn-group btn-group-sm" role="group" aria-label="">
+                  <button type="button" class="btn btn-outline-success" (click)="updateProduct(product)">✓</button>
+                  <button type="button" class="btn btn-outline-danger" (click)="product.edit = false">X</button>
+                </div>
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-hover" *ngIf="addingNewProduct">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Category</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Units</th>
+          <th scope="col">Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>#</td>
+          <ng-container>
+            <td><input class="form-control form-control-sm" #category type="text" placeholder="Category"></td>
+            <td><input class="form-control form-control-sm" #name type="text" placeholder="Name"></td>
+            <td><input class="form-control form-control-sm" #description type="text" placeholder="Description"></td>
+            <td><input class="form-control form-control-sm" #units type="number" placeholder="Units"></td>
+            <td>
+                <div class="btn-group btn-group-sm" role="group" aria-label="">
+                  <button type="button" class="btn btn-outline-success" (click)="addProductByTemplate(category.value,name.value,description.value,units.value)">✓</button>
+                  <button type="button" class="btn btn-outline-danger" (click)="addingNewProduct = false">X</button>
+                </div>
+
+            </td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
