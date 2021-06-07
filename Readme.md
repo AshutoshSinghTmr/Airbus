@@ -12,8 +12,9 @@ username | password
 
 resource        | Url
 --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------
+api docs        | https://isentropic-road-316012.el.r.appspot.com/v3/api-docs.yaml
 base            | https://isentropic-road-316012.el.r.appspot.com
-auth            | https://isentropic-road-316012.el.r.appspot.com/authenticate 
+auth {no auth}  | https://isentropic-road-316012.el.r.appspot.com/authenticate 
 get products    | https://isentropic-road-316012.el.r.appspot.com/api/v1/products
 get products    | https://isentropic-road-316012.el.r.appspot.com/api/v1/products/{id} 
 get products    | https://isentropic-road-316012.el.r.appspot.com/api/v1/products/{category}
