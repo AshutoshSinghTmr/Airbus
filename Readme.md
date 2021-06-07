@@ -20,5 +20,11 @@ get products    | https://isentropic-road-316012.el.r.appspot.com/api/v1/product
 update product  | https://isentropic-road-316012.el.r.appspot.com/api/v1/products/{id}
 create product  | https://isentropic-road-316012.el.r.appspot.com/api/v1/products/create
 
-## Overview
+
+### Gcp Angular
+
+resource        | Url
+--------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------
+home            | https://angular-dot-isentropic-road-316012.el.r.appspot.com
+
 
