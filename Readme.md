@@ -1,8 +1,8 @@
 
 # ProductCatelog – An Airline Products Catelog Service
 
-"Credentials" 
-username | password
+
+user     | credential
 -------- | --------
 username | password
 
