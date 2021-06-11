@@ -326,7 +326,7 @@ paths:
       description: update product
       operationId: updateProductCatelog
       parameters:
-      - name: product id
+      - name: id
         in: path
         description: unique product identifier
         required: true
@@ -394,7 +394,7 @@ paths:
       description: retrieve all products by id
       operationId: getAllProductById
       parameters:
-      - name: product id
+      - name: id
         in: path
         description: unique product identifier
         required: true
