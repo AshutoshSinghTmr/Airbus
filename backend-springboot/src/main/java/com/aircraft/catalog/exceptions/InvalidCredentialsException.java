@@ -6,13 +6,13 @@ import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
 /**
- * Product Not Found Exception class
+ * Invalid Credentials Exception
  * @author Ashutosh Tomar
  */
 @Getter
 @Setter
 @AllArgsConstructor
-public class ProductNotFoundException extends RuntimeException {
+public class InvalidCredentialsException extends RuntimeException {
   private static final long serialVersionUID = 1;
   private final String errorMessage;
   private final HttpStatus errorCode;
