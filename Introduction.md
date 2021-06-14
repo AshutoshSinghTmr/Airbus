@@ -31,15 +31,14 @@
 
 4. Architechture :	
 
-
-                    a. Backend 
+		a. Backend 
                               --- Springboot 2.5.0
                               --- Java  11
                               --- H2 Database
-		    b. Frontend 
+		b. Frontend 
                               --- Angular version 11
                        
-		    c. Deploy
+		c. Deploy
                               --- Google Appengine Managed Cloud Platform
 
 
