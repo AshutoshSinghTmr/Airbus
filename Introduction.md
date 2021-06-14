@@ -1,5 +1,6 @@
 1. Intro
 2. Problem Statement - 
+
 					With the increased online shopping market, an Inventory has to be managed in a completely
 					digitized manner without manual interventions.Design and implement an end to end solution to
 					enable this.
