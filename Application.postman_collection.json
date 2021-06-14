@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "bf9d50ce-d441-466f-a067-a554034187fd",
+		"name": "Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate - 200 Ok",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTYyMzA3MzA3OCwiaWF0IjoxNjIzMDU1MDc4fQ.5yw29lDKIzEYG_Si-cg5FWkYfe4ZPuYsWBycX477XGlAZE_hPwr1OvwgjBc9G3BKiN-b0Nn-XXqNf55I7EwASQ",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Origin",
+						"value": "https://angular-dot-isentropic-road-316012.el.r.appspot.com",
+						"type": "text"
+					},
+					{
+						"key": "Access-Control-Request-Headers",
+						"value": "no-cors",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"username\", \"password\": \"password\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://isentropic-road-316012.el.r.appspot.com/authenticate",
+					"protocol": "https",
+					"host": [
+						"isentropic-road-316012",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate - 401 Invalid Credentials",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTYyMzA3MzA3OCwiaWF0IjoxNjIzMDU1MDc4fQ.5yw29lDKIzEYG_Si-cg5FWkYfe4ZPuYsWBycX477XGlAZE_hPwr1OvwgjBc9G3BKiN-b0Nn-XXqNf55I7EwASQ",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Origin",
+						"value": "https://angular-dot-isentropic-road-316012.el.r.appspot.com",
+						"type": "text"
+					},
+					{
+						"key": "Access-Control-Request-Headers",
+						"value": "no-cors",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"username\",\r\n    \"password\": \"passwor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://isentropic-road-316012.el.r.appspot.com/authenticate",
+					"protocol": "https",
+					"host": [
+						"isentropic-road-316012",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate - 400 Bad Request",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTYyMzA3MzA3OCwiaWF0IjoxNjIzMDU1MDc4fQ.5yw29lDKIzEYG_Si-cg5FWkYfe4ZPuYsWBycX477XGlAZE_hPwr1OvwgjBc9G3BKiN-b0Nn-XXqNf55I7EwASQ",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Origin",
+						"value": "https://angular-dot-isentropic-road-316012.el.r.appspot.com",
+						"type": "text"
+					},
+					{
+						"key": "Access-Control-Request-Headers",
+						"value": "no-cors",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"username\",\r\n    \"passwor\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://isentropic-road-316012.el.r.appspot.com/authenticate",
+					"protocol": "https",
+					"host": [
+						"isentropic-road-316012",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create product - 201 Created",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTYyMzExNTM4OSwiaWF0IjoxNjIzMDk3Mzg5fQ.Yb5DTFfm88ZDj5KemszHa407TNIdW07xOQEd6eCObx2Sml8kxSZXoTY1FJWmuu1R_KEsaBXJ5-Be_ZS0JJG5cw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"productCategory\": \"Commercial\",\r\n        \"productName\": \"A220\",\r\n        \"productDescription\": \"Passenger Aircraft Family\",\r\n        \"units\": \"5\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://isentropic-road-316012.el.r.appspot.com/api/v1/products/create",
+					"protocol": "https",
+					"host": [
+						"isentropic-road-316012",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create product - 400 Bad Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTYyMzExNTM4OSwiaWF0IjoxNjIzMDk3Mzg5fQ.Yb5DTFfm88ZDj5KemszHa407TNIdW07xOQEd6eCObx2Sml8kxSZXoTY1FJWmuu1R_KEsaBXJ5-Be_ZS0JJG5cw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"productCategory\": \"Commercial\",\r\n        \"productName\": \"A220\",\r\n        \"productDescription\": \"Passenger Aircraft Family\",\r\n        \"units\": \"0\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://isentropic-road-316012.el.r.appspot.com/api/v1/products/create",
+					"protocol": "https",
+					"host": [
+						"isentropic-road-316012",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create product - 401 unauthorized",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTYyMzExNTM4OSwiaWF0IjoxNjIzMDk3Mzg5fQ.Yb5DTFfm88ZDj5KemszHa407TNIdW07xOQEd6eCObx2Sml8kxSZXoTY1FJWmuu1R_KEsaBXJ5-Be_ZS0JJG5cw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"productCategory\": \"Commercial\",\r\n        \"productName\": \"A220\",\r\n        \"productDescription\": \"Passenger Aircraft Family\",\r\n        \"units\": \"0\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://isentropic-road-316012.el.r.appspot.com/api/v1/products/create",
+					"protocol": "https",
+					"host": [
+						"isentropic-road-316012",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get All products - 200 Ok",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTYyMzExNTM4OSwiaWF0IjoxNjIzMDk3Mzg5fQ.Yb5DTFfm88ZDj5KemszHa407TNIdW07xOQEd6eCObx2Sml8kxSZXoTY1FJWmuu1R_KEsaBXJ5-Be_ZS0JJG5cw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://isentropic-road-316012.el.r.appspot.com/api/v1/products",
+					"protocol": "https",
+					"host": [
+						"isentropic-road-316012",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products by ID - 200 Ok",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTYyMzExNTM4OSwiaWF0IjoxNjIzMDk3Mzg5fQ.Yb5DTFfm88ZDj5KemszHa407TNIdW07xOQEd6eCObx2Sml8kxSZXoTY1FJWmuu1R_KEsaBXJ5-Be_ZS0JJG5cw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://isentropic-road-316012.el.r.appspot.com/api/v1/products/2",
+					"protocol": "https",
+					"host": [
+						"isentropic-road-316012",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products by ID - 404 Not Found",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTYyMzExNTM4OSwiaWF0IjoxNjIzMDk3Mzg5fQ.Yb5DTFfm88ZDj5KemszHa407TNIdW07xOQEd6eCObx2Sml8kxSZXoTY1FJWmuu1R_KEsaBXJ5-Be_ZS0JJG5cw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://isentropic-road-316012.el.r.appspot.com/api/v1/products/55",
+					"protocol": "https",
+					"host": [
+						"isentropic-road-316012",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products by Category - 200 ok",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTYyMzExNTM4OSwiaWF0IjoxNjIzMDk3Mzg5fQ.Yb5DTFfm88ZDj5KemszHa407TNIdW07xOQEd6eCObx2Sml8kxSZXoTY1FJWmuu1R_KEsaBXJ5-Be_ZS0JJG5cw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://isentropic-road-316012.el.r.appspot.com/api/v1/products/category/commer",
+					"protocol": "https",
+					"host": [
+						"isentropic-road-316012",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"category",
+						"commer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products by Category - 404 Not found",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTYyMzExNTM4OSwiaWF0IjoxNjIzMDk3Mzg5fQ.Yb5DTFfm88ZDj5KemszHa407TNIdW07xOQEd6eCObx2Sml8kxSZXoTY1FJWmuu1R_KEsaBXJ5-Be_ZS0JJG5cw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://isentropic-road-316012.el.r.appspot.com/api/v1/products/category/unknown",
+					"protocol": "https",
+					"host": [
+						"isentropic-road-316012",
+						"el",
+						"r",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"category",
+						"unknown"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTYyMzY3NzI0OCwiaWF0IjoxNjIzNjU5MjQ4fQ.JM5LrPDVeDkztsbzv1MbM3Kx-WzggRIBEsXiEJjRYJc0CkrejVAls5K0IhC6xR7HOJ7q_2xKlG7mRHHK4wRS7Q",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
